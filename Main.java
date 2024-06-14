@@ -39,6 +39,8 @@ public class Main {
             }
         }
 
+        scanner.close();
+
         /* Initialize matrix C */
         int[][] matrixC = new int[n][p];
 
@@ -62,6 +64,5 @@ public class Main {
             System.out.println();
         }
 
-        scanner.close();
     }
 }
