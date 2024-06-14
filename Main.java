@@ -1,27 +1,54 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        int n = 0, m = 0, p = 0, r=0;
+
         /* Input matrix A dimensions */
         System.out.print("Enter the number of rows and columns for matrix A: ");
-        int n = scanner.nextInt();
-        int m = scanner.nextInt();
+        while (true) {
+            try {
+                n = scanner.nextInt();
+                m = scanner.nextInt();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Enter integer values only.");
+                return;
+            }
+        }
 
         /* Input matrix A elements */
         int[][] matrixA = new int[n][m];
         System.out.println("Enter the elements of matrix A:");
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                matrixA[i][j] = scanner.nextInt();
+                while (true) {
+                    try {
+                        matrixA[i][j] = scanner.nextInt();
+                        break;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid input. Enter integer values only.");
+                        return;
+                    }
+                }
             }
         }
 
         /* Input matrix B dimensions */
         System.out.print("Enter the number of rows and columns for matrix B: ");
-        int r = scanner.nextInt();
-        int p = scanner.nextInt();
+        while (true) {
+            try {
+                r = scanner.nextInt();
+                p = scanner.nextInt();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Enter integer values only.");
+                return;
+            }
+        }
 
         /* check to ensure the inner dimensions match:
            value of column in matrixA should equal value of row in MatrixB */
@@ -35,7 +62,15 @@ public class Main {
         System.out.println("Enter the elements of matrix B:");
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < p; j++) {
-                matrixB[i][j] = scanner.nextInt();
+                while (true) {
+                    try {
+                        matrixB[i][j] = scanner.nextInt();
+                        break;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid input. Please enter an integer value.");
+                        return;
+                    }
+                }
             }
         }
 
