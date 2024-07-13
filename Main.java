@@ -79,21 +79,17 @@ public class Main {
         /* Initialize matrix C */
         int[][] matrixC = new int[n][p];
 
+        System.out.println("Matrix C (Result of multiplication):");
         /* Perform matrix multiplication */
         for (int i = 0; i < n; i++) {                   // row of MatrixA
             for (int j = 0; j < p; j++) {               // column of MatrixB
 
-                for (int k = 0; k < m; k++) {           // k represents the changing values, in both matrices i and j don't change
-                                                        // it is k which changes in the row(MatrixA) across and column(MatrixB) down
+                for (int k = 0; k < m; k++) {           // k represents the changing values, in both matrices.
+                                                        // i and j don't change, it is k which changes in the
+                                                        // row(MatrixA) across and column(MatrixB) down
+
                     matrixC[i][j] += matrixA[i][k] * matrixB[k][j];
                 }
-            }
-        }
-
-        /* Output the result */
-        System.out.println("Matrix C (Result of multiplication):");
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < p; j++) {
                 System.out.print(matrixC[i][j] + " ");
             }
             System.out.println();
